@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-public class StretchyHeaderImageView: StretchyHeaderView {
+open class StretchyHeaderImageView: StretchyHeaderView {
     // MARK:- Public property
     /// 開關顯示毛玻璃效果
-    public var showBlurEffect: Bool = false
-    public var showBottomGradient: Bool = true
+    open var showBlurEffect: Bool = false
+    open var showBottomGradient: Bool = true
     
     // MARK:- Private property
     private var headerImage: UIImage?
@@ -37,7 +37,7 @@ public class StretchyHeaderImageView: StretchyHeaderView {
         configureGradientLayer()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         configureHeaderImageView()
         configureBlurEffectView()
@@ -102,13 +102,12 @@ public class StretchyHeaderImageView: StretchyHeaderView {
     }
     
     // MARK:- Public methods
-    public func setHeaderImage(image: UIImage?) {
+    open func setHeaderImage(image: UIImage?) {
         headerImageView.image = image
     }
     
-    public override func scrollViewDidScroll(scrollView: UIScrollView) {
+    open override func scrollViewDidScroll(scrollView: UIScrollView) {
         super.scrollViewDidScroll(scrollView: scrollView)
-        
         
     }
     

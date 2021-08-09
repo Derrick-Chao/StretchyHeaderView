@@ -2,14 +2,14 @@
 import Foundation
 import UIKit
 
-public class StretchyHeaderView: UIView {
+open class StretchyHeaderView: UIView {
     // MARK:- Public property
     public let containerView = UIView()
     public private(set) var headerHeight: CGFloat = 0.0
     /// 開關上滑後是否縮小 HeaderView 置頂
-    public var shrinkOnTheTop: Bool = false
+    open var shrinkOnTheTop: Bool = false
     /// 開啟上滑縮小後 HeaderView 的顯示高度，非瀏海機預設 64.0，瀏海機 84.0
-    public var shrinkHeight: CGFloat = 64.0 {
+    open var shrinkHeight: CGFloat = 64.0 {
         didSet {
             if shrinkHeight > headerHeight {
                 shrinkHeight = headerHeight
@@ -101,7 +101,7 @@ public class StretchyHeaderView: UIView {
     }
     
     // MARK:- Public methods
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    open func scrollViewDidScroll(scrollView: UIScrollView) {
         print("scrollView.contentInset: \(scrollView.contentInset), scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
 //        containerViewHeightConstraint.constant = scrollView.contentInset.top
         /*
