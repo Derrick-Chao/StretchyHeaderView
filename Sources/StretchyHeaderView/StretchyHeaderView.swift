@@ -45,7 +45,7 @@ open class StretchyHeaderView: UIView {
         print("StretchyHeaderView deinit.")
     }
     
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
         print("didMoveToSuperview superView: \(superview)")
@@ -71,7 +71,7 @@ open class StretchyHeaderView: UIView {
         }
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
     }

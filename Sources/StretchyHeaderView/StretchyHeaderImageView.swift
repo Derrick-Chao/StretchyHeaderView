@@ -44,7 +44,7 @@ open class StretchyHeaderImageView: StretchyHeaderView {
         configureGradientLayer()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         if showBottomGradient == false {
