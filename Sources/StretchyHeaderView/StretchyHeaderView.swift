@@ -2,6 +2,10 @@
 import Foundation
 import UIKit
 
+public enum FingerScrollDirection {
+    case up, down, none
+}
+
 open class StretchyHeaderView: UIView {
     // MARK:- Public property
     public let containerView = UIView()
@@ -22,6 +26,7 @@ open class StretchyHeaderView: UIView {
     private var containerViewHeightConstraint: NSLayoutConstraint!
     private var containerViewTopConstraint: NSLayoutConstraint!
     private var contentOffsetObservation: NSKeyValueObservation?
+    private var previousOffsetY: CGFloat = 0.0
     
     // MARK:- Initialization
     public init(headerHeight: CGFloat) {
@@ -66,7 +71,17 @@ open class StretchyHeaderView: UIView {
             contentOffsetObservation = scrollView.observe(\.contentOffset, options: [.new]) { [weak self] scrollView, changed in
                 guard let self = self else { return }
                 
-                self.scrollViewDidScroll(scrollView: scrollView)
+                let offsetY = scrollView.contentOffset.y
+                let direction: FingerScrollDirection
+                if self.previousOffsetY > offsetY {
+                    direction = .down
+                } else if self.previousOffsetY < offsetY {
+                    direction = .up
+                } else {
+                    direction = .none
+                }
+                self.previousOffsetY = offsetY
+                self.scrollViewDidScroll(scrollView: scrollView, direction: direction)
             }
         }
     }
@@ -101,7 +116,7 @@ open class StretchyHeaderView: UIView {
     }
     
     // MARK:- Public methods
-    open func scrollViewDidScroll(scrollView: UIScrollView) {
+    open func scrollViewDidScroll(scrollView: UIScrollView, direction: FingerScrollDirection) {
         print("scrollView.contentInset: \(scrollView.contentInset), scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
 //        containerViewHeightConstraint.constant = scrollView.contentInset.top
         /*

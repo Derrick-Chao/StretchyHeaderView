@@ -106,9 +106,8 @@ open class StretchyHeaderImageView: StretchyHeaderView {
         headerImageView.image = image
     }
     
-    open override func scrollViewDidScroll(scrollView: UIScrollView) {
-        super.scrollViewDidScroll(scrollView: scrollView)
-        
+    open override func scrollViewDidScroll(scrollView: UIScrollView, direction: FingerScrollDirection) {
+        super.scrollViewDidScroll(scrollView: scrollView, direction: direction)
     }
     
     // MARK:- Private methods
