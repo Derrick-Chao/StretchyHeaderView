@@ -123,6 +123,7 @@ open class StretchyHeaderView: UIView {
         let offsetY = offset + scrollView.contentInset.top
         containerView.clipsToBounds = true
         containerViewTopConstraint.constant = 0.0
+        containerViewHeightConstraint.constant = 0.0
         if shrinkOnTheTop && offsetY >= (headerHeight - shrinkHeight) {
             topAnchorConstraint.constant = offsetY - (headerHeight - shrinkHeight)
         } else {
