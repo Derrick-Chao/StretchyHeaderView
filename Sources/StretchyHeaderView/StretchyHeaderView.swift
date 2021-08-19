@@ -47,13 +47,13 @@ open class StretchyHeaderView: UIView {
     }
     
     deinit {
-        print("StretchyHeaderView deinit.")
+//        print("StretchyHeaderView deinit.")
     }
     
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
-        print("didMoveToSuperview superView: \(superview)")
+//        print("didMoveToSuperview superView: \(superview)")
         if superview is UIScrollView , let scrollView = self.superview as? UIScrollView {
 //            scrollView = superview as? UIScrollView
             if #available(iOS 11.0, *) {
@@ -117,7 +117,7 @@ open class StretchyHeaderView: UIView {
     
     // MARK:- Public methods
     open func scrollViewDidScroll(scrollView: UIScrollView, direction: FingerScrollDirection) {
-        print("scrollView.contentInset: \(scrollView.contentInset), scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
+//        print("scrollView.contentInset: \(scrollView.contentInset), scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
 //        containerViewHeightConstraint.constant = scrollView.contentInset.top
         /*
          contentOffset.y
