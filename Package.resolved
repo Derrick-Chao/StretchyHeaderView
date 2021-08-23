@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UIDeviceModelExtension",
+        "repositoryURL": "https://github.com/Derrick-Chao/UIDeviceModelExtension.git",
+        "state": {
+          "branch": null,
+          "revision": "2ab6e7f462663247f6162eddc4e6eee64f519667",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

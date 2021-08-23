@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import UIDeviceModelExtension
 
 public enum FingerScrollDirection {
     case up, down, none
@@ -108,7 +109,7 @@ open class StretchyHeaderView: UIView {
     
     private func setShrikHeight() {
         
-        if UIScreen.main.bounds.height >= 812.0 {
+        if UIDevice.current.isOneOf(UIDevice.allNotchiPhoneDevices) {
             shrinkHeight = 88.0
         } else {
             shrinkHeight = 64.0
