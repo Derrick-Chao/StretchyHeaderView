@@ -12,7 +12,7 @@ open class StretchyHeaderView: UIView {
     public private(set) var headerHeight: CGFloat = 0.0
     /// 開關上滑後是否縮小 HeaderView 置頂
     open var shrinkOnTheTop: Bool = false
-    /// 開啟上滑縮小後 HeaderView 的顯示高度，非瀏海機預設 64.0，瀏海機 84.0
+    /// 開啟上滑縮小後 HeaderView 的顯示高度，非瀏海機預設 64.0，瀏海機 88.0
     open var shrinkHeight: CGFloat = 64.0 {
         didSet {
             if shrinkHeight > headerHeight {
@@ -109,7 +109,7 @@ open class StretchyHeaderView: UIView {
     private func setShrikHeight() {
         
         if UIScreen.main.bounds.height >= 812.0 {
-            shrinkHeight = 84.0
+            shrinkHeight = 88.0
         } else {
             shrinkHeight = 64.0
         }
